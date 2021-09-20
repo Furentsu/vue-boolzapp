@@ -86,8 +86,23 @@ const root = new Vue({
                     }
                 ],
             },
-        ]
+        ],
+        selectedConversation: 0,
     },
-    methods: {}
+        methods: {
+        getLastTextMessage: function(index) {
+            let messages = this.contacts[index].messages;
+            return messages[messages.length - 1].text;
+        },
+
+        getLastTextDate: function(index) {
+            let messages = this.contacts[index].messages;
+            return messages[messages.length - 1].date;
+        },
+
+        getConversationIndex: function(index) {
+            this.selectedConversation = index;
+        }
+    }
     // Hooks
 })

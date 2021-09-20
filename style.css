@@ -5,7 +5,7 @@
 }
 
 .my_top_image_container {
-    width: 10%;
+    width: 50px;
 }
 
 .my_notify_image_container {
@@ -15,7 +15,8 @@
     background-color: white;
 }
 
-.my_top_image_container img {
+.my_top_image_container img,
+.my_friends_icons_container img {
     width: 100%;
     border-radius: 2em;
 }
@@ -38,6 +39,21 @@
     color:black
 }
 
+.my_friends_icons_container {
+    width: 65px;
+}
+
+.my_messages {
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    width: 130px; 
+    height: 1.3em; 
+    white-space: nowrap;
+}
+
+.my_chat_box {
+    margin: 15px 5px;
+}
 
 
 /* ID */
@@ -63,7 +79,6 @@
 }
 
 #my_chats_box {
-    border: 1px solid red;
     background-color: white;
     height: 94vh;
 }
@@ -73,14 +88,11 @@
     height: 94vh;
 }
 
-#my_user_bar {
+#my_top_bar {
     background-color: #eff1ec;
     height: 6vh;
 }
 
-#my_username {
-    font-weight: bold;
-}
 
 
 
