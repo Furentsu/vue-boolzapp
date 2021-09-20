@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ID */
+
+/* Background */
+#my_top_background {
+    background-color:  #009688;
+    height: 15vh;
+}
+
+#my_bottom_background {
+    background-color:  #eff1ec;
+    height: 85vh;
+}
+
+/* Main app */
+#my_chats_box {
+    background-color: red;
+    height: 90vh;
+}
+
+#my_active_chat {
+    background-color: blue;
+    height: 90vh;
+}
