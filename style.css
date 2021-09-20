@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 /* ID */
 
 /* Background */
@@ -18,12 +19,20 @@
 }
 
 /* Main app */
+#my_app_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
 #my_chats_box {
-    background-color: red;
+    border: 1px solid red;
     height: 90vh;
 }
 
 #my_active_chat {
-    background-color: blue;
+    border: 1px solid blue;
     height: 90vh;
 }

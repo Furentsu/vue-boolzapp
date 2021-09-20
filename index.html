@@ -18,27 +18,19 @@
     <title>Vuelzapp</title>
 </head>
 <body>
-    <section class="background position-relative">
-        <div class="container-fluid">
-            <div class="row position-absolute">
+        <!-- Background content -->
+        <div class="container-fluid position-absolute">
+            <div class="row">
                 <div id="background" class="col-12 gx-0">
                     <div id="my_top_background"></div>
                     <div id="my_bottom_background"></div>
                 </div>
             </div>
-        </div>    
-    </section>
-    <div class="container-fluid">
-        <div class="row position-absolute">
-            <div id="background" class="col-12 gx-0">
-                <div id="my_top_background"></div>
-                <div id="my_bottom_background"></div>
-            </div>
         </div>
-    </div>
-
-    <div id="root">
-        <div class="container">
+        
+        <!-- Main app content -->
+        <div id="root">
+            <div id="my_app_container" class="container position-absolute">
                 <div class="row g-0">
                     <div class="col-4">
                         <div id="my_chats_box">
@@ -51,11 +43,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
-        
-    </div>
-    
-
     <script src="script.js"></script>
 </body>
 </html>
