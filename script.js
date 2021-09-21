@@ -97,6 +97,11 @@ const root = new Vue({
             return messages[messages.length - 1].text;
         },
 
+        getLastTextMessageStatus: function(index) {
+            let messages = this.contacts[index].messages;
+            return messages[messages.length - 1].status;
+        },
+
         getLastTextDate: function(index) {
             let messages = this.contacts[index].messages;
             return messages[messages.length - 1].date;
@@ -122,8 +127,14 @@ const root = new Vue({
             if (this.newMessage.trim().length > 0) {
                 this.contacts[this.selectedConversation].messages.push({'date': this.sentMessageDate(), 'text':this.newMessage, 'status':'sent'});
                 this.newMessage = '';
+                setTimeout(this.messageAnswer, 1000);
             } 
         },
-    }
+
+        messageAnswer: function() {
+            this.contacts[this.selectedConversation].messages.push({'date': this.sentMessageDate(), 'text':'Ok!', 'status':'received'});
+        }
+    },
     // Hooks
+    
 })
