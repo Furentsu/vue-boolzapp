@@ -71,7 +71,7 @@
                               </div>
 
                             <!-- Chats section -->
-                            <div class="my_chat_box d-flex" v-for="(element,index) in contacts" @click="getConversationIndex(index)" :class="{'active' : index == selectedConversation}">
+                            <div class="my_chat_box d-flex" v-for="(element,index) in contacts" @click="getConversationIndex(index)">
                                 <div class="my_friends_icons_container ps-1">
                                     <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="Friend's image">
                                 </div>
@@ -108,7 +108,20 @@
                             </div>
 
                             <!-- Chat container -->
-                            
+                            <section class="my_chat_container">
+                                <div class="d-flex align-items-center flex-column">
+                                    <div class="position-relative" v-for="(element,index) in contacts[selectedConversation].messages"
+                                    :class="{my_sent_message : (element.status == 'sent'), my_received_message : (element.status == 'received') }">
+                                        <span class="my_message_chat_text">{{element.text}}</span>
+                                        <span class="my_message_chat_date">{{element.date}}</span>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Input section -->
+                            <div class="my_user_input_container">
+                                <i class="far fa-smile"></i>
+                            </div>
                         </div>
                     </div>
                 </div>

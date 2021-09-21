@@ -55,6 +55,49 @@
     margin: 15px 5px;
 }
 
+/* Chat container */
+.my_chat_container {
+    height: calc(100% - 12vh);
+    background-image: url("img/mine.jpg");
+}
+
+.my_sent_message,
+.my_received_message {
+    width: 33%;
+    top: 50px;
+    height: 55px;
+    border-radius: 8px;
+}
+
+.my_sent_message {
+    left: 180px;
+    background-color: #DCF8C6
+}
+
+.my_received_message {
+    right: 180px;
+    background-color: white;
+}
+
+.my_message_chat_date {
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+}
+
+.my_message_chat_text {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+}
+
+/* Message input section */
+.my_user_input_container {
+    width: 100%;
+    height: 6vh;
+    border: 1px solid orange;
+}
+
 
 /* ID */
 

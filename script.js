@@ -88,6 +88,7 @@ const root = new Vue({
             },
         ],
         selectedConversation: 0,
+        prova: "ciao"
     },
         methods: {
         getLastTextMessage: function(index) {
