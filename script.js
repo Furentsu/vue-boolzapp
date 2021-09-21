@@ -89,6 +89,7 @@ const root = new Vue({
         ],
         selectedConversation: 0,
         newMessage: '',
+        nameSearch: ''
     },
         methods: {
 
@@ -135,6 +136,13 @@ const root = new Vue({
             this.contacts[this.selectedConversation].messages.push({'date': this.sentMessageDate(), 'text':'Ok!', 'status':'received'});
         }
     },
-    // Hooks
+
+    computed: {
+        filteredNames: function() {
+            return this.contacts.filter(item => {
+                return item.name.toLowerCase().match(this.nameSearch.toLowerCase());
+            })
+        }
+    }
     
 })
