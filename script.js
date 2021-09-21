@@ -88,7 +88,7 @@ const root = new Vue({
             },
         ],
         selectedConversation: 0,
-        prova: "ciao"
+        newMessage: ''
     },
         methods: {
         getLastTextMessage: function(index) {
@@ -103,7 +103,15 @@ const root = new Vue({
 
         getConversationIndex: function(index) {
             this.selectedConversation = index;
+        },
+
+        sendMessage: function() {
+            if (this.newMessage.trim().length > 0) {
+                this.contacts[this.selectedConversation].messages.push({'date':'Data attuale', 'text':this.newMessagge, 'status':'sent'});
+                this.newMessagge = '';
+            } 
         }
     }
     // Hooks
 })
+

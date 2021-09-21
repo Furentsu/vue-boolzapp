@@ -121,7 +121,7 @@
                             <!-- Input section -->
                             <div class="my_user_input_container d-flex justify-content-around align-items-center">
                                 <i class="far fa-smile flex-grow-1 text-center"></i>
-                                <input type="text" class="my_message_input">
+                                <input type="text" class="my_message_input ps-2" placeholder="Scrivi un messaggio" @keyup.enter='sendMessage' v-model='newMessage'>
                                 <i class="fas fa-microphone flex-grow-1 text-center"></i>
                             </div>
                         </div>
@@ -133,3 +133,6 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
