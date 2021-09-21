@@ -88,9 +88,10 @@ const root = new Vue({
             },
         ],
         selectedConversation: 0,
-        newMessage: ''
+        newMessage: '',
     },
         methods: {
+
         getLastTextMessage: function(index) {
             let messages = this.contacts[index].messages;
             return messages[messages.length - 1].text;
@@ -105,13 +106,24 @@ const root = new Vue({
             this.selectedConversation = index;
         },
 
+        sentMessageDate: function() {
+            const today = new Date();
+            const dd = String(today.getDate()).padStart(2, '0');
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const yyyy = today.getFullYear();
+            const h = today.getHours();
+            const min = today.getMinutes();
+            const s = today.getSeconds();
+
+            return dd + '/' + mm + '/' + yyyy + ' ' + h + ':' + min + ':' + s;
+        },
+
         sendMessage: function() {
             if (this.newMessage.trim().length > 0) {
-                this.contacts[this.selectedConversation].messages.push({'date':'Data attuale', 'text':this.newMessagge, 'status':'sent'});
-                this.newMessagge = '';
+                this.contacts[this.selectedConversation].messages.push({'date': this.sentMessageDate(), 'text':this.newMessage, 'status':'sent'});
+                this.newMessage = '';
             } 
-        }
+        },
     }
     // Hooks
 })
-
