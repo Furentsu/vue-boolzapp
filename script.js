@@ -128,21 +128,24 @@ const root = new Vue({
             if (this.newMessage.trim().length > 0) {
                 this.contacts[this.selectedConversation].messages.push({'date': this.sentMessageDate(), 'text':this.newMessage, 'status':'sent'});
                 this.newMessage = '';
-                setTimeout(this.messageAnswer, 1000);
+                setTimeout(this.messageAnswer, 3000);
             } 
         },
 
         messageAnswer: function() {
             this.contacts[this.selectedConversation].messages.push({'date': this.sentMessageDate(), 'text':'Ok!', 'status':'received'});
-        }
-    },
+        },
 
-    computed: {
-        filteredNames: function() {
-            return this.contacts.filter(item => {
-                return item.name.toLowerCase().match(this.nameSearch.toLowerCase());
-            })
+        filterNames: function() {
+           const self = this;
+
+           this.contacts.forEach(element => {
+               if (element.name.toLowerCase().includes(self.nameSearch.toLowerCase())) {
+                    element.visible = true;     
+               } else {
+                    element.visible = false;
+               }
+           })
         }
     }
-    
 })

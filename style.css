@@ -23,12 +23,12 @@
 
 .fas.fa-bell-slash {
     font-size: 1.5rem;
-    color: rgb(32, 193, 247);
+    color: #34B7F1;
 }
 
 .notifications {
     height: 8vh;
-    background-color: rgb(32, 193, 247);
+    background-color: #34B7F1;
 }
 
 .btn.btn-outline-secondary {

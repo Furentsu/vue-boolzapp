@@ -67,16 +67,16 @@
                                 <button class="btn btn-outline-secondary" type="button" id="button-addon1">
                                     <i class="fas fa-search"></i>
                                 </button>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="nameSearch" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" @keyup="filterNames()" v-model="nameSearch" aria-label="Example text with button addon" aria-describedby="button-addon1">
                               </div>
 
                             <!-- Chats section -->
-                            <div class="my_chat_box d-flex" v-for="(element,index) in filteredNames" @click="getConversationIndex(index)">
+                            <div class="my_chat_box d-flex" v-for="(element,index) in contacts" v-if="element.visible" @click="getConversationIndex(index)">
                                 <div class="my_friends_icons_container ps-1">
-                                    <img :src="'img/avatar' + filteredNames[index].avatar + '.jpg'" alt="Friend's image">
+                                    <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="Friend's image">
                                 </div>
                                 <div class="my_notifications_text d-flex flex-column ps-2 flex-grow-1 ">
-                                    <span class="fw-bold">{{filteredNames[index].name}}</span>
+                                    <span class="fw-bold">{{contacts[index].name}}</span>
                                     <span class="my_messages">{{getLastTextMessage(index)}}</span>
                                 </div>
 
@@ -92,11 +92,11 @@
                         <div id="my_active_chat">
                             <div id="my_top_bar" class="d-flex align-items-center">
                                 <div class="my_top_image_container ps-1">
-                                    <img :src="'img/avatar' + filteredNames[selectedConversation].avatar + '.jpg'" alt="Current chat image">
+                                    <img :src="'img/avatar' + contacts[selectedConversation].avatar + '.jpg'" alt="Current chat image">
                                 </div>
 
                                 <div class="my_notifications_text d-flex flex-column ps-2 flex-grow-1 ">
-                                    <span>{{filteredNames[selectedConversation].name}}</span>
+                                    <span>{{contacts[selectedConversation].name}}</span>
                                     <span>Ultimo accesso oggi: {{getLastTextDate(selectedConversation)}}</span>
                                 </div>
 
@@ -110,7 +110,7 @@
                             <!-- Chat container -->
                             <section class="my_chat_container">
                                 <div class="d-flex align-items-center flex-column">
-                                    <div class="position-relative" v-for="(element,index) in filteredNames[selectedConversation].messages"
+                                    <div class="position-relative" v-for="(element,index) in contacts[selectedConversation].messages"
                                     :class="{my_sent_message : (element.status == 'sent'), my_received_message : (element.status == 'received') }">
                                         <span class="my_message_chat_text">{{element.text}}</span>
                                         <span class="my_message_chat_date">{{element.date}}</span>
@@ -133,6 +133,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
