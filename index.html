@@ -6,8 +6,7 @@
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <!-- Google Fonts -->
-    
+
     <!-- Bootstrap v5.1.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- My stylesheet -->
@@ -42,7 +41,7 @@
                                 <div class="my_top_image_container ps-1">
                                     <img src="img/avatar_io.jpg" alt="User image">
                                 </div>
-                                <span class="ps-2 fw-bold">Nome Utente</span>
+                                <span class="ps-2 fw-bold">Jenny</span>
 
                                 <div class="d-flex flex-grow-1 justify-content-end">
                                     <i class="fas fa-circle-notch pe-3"></i>
@@ -57,8 +56,8 @@
                                     <i class="fas fa-bell-slash"></i>
                                 </div>
                                 <div class="my_notifications_text d-flex flex-column ps-2">
-                                    <span>Ricevi notifiche di nuovi messaggi</span>
-                                    <span>Attiva notifiche desktop</span>
+                                    <span>Allow notifications for messages</span>
+                                    <span>Turn on desktop notifications</span>
                                 </div>
                             </div>
                             
@@ -67,7 +66,7 @@
                                 <button class="btn btn-outline-secondary" type="button" id="button-addon1">
                                     <i class="fas fa-search"></i>
                                 </button>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" @keyup="filterNames()" v-model="nameSearch" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                <input type="text" class="form-control" placeholder="Search or start a new chat" @keyup="filterNames()" v-model="nameSearch" aria-label="Example text with button addon" aria-describedby="button-addon1">
                               </div>
 
                             <!-- Chats section -->
@@ -80,8 +79,8 @@
                                     <span class="my_messages">{{getLastTextMessage(index)}}</span>
                                 </div>
 
-                                <div id="my_top_bar_icons" class="d-flex justify-content-end">
-                                    <span>{{getLastTextDate(index)}}</span>
+                                <div id="my_top_bar_icons" class="d-flex justify-content-end pe-2">
+                                    <span style="font-size: 14px;">{{getLastTextDate(index)}}</span>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +96,7 @@
 
                                 <div class="my_notifications_text d-flex flex-column ps-2 flex-grow-1 ">
                                     <span>{{contacts[selectedConversation].name}}</span>
-                                    <span>Ultimo accesso oggi: {{getLastTextDate(selectedConversation)}}</span>
+                                    <span>Last seen today at: {{getLastTextDate(selectedConversation)}}</span>
                                 </div>
 
                                 <div class="d-flex flex-grow-1 justify-content-end">
@@ -121,7 +120,7 @@
                             <!-- Input section -->
                             <div class="my_user_input_container d-flex justify-content-around align-items-center">
                                 <i class="far fa-smile flex-grow-1 text-center"></i>
-                                <input type="text" class="my_message_input ps-2" placeholder="Scrivi un messaggio" @keyup.enter='sendMessage' v-model='newMessage'>
+                                <input type="text" class="my_message_input ps-2" placeholder="Write a message" @keyup.enter='sendMessage' v-model='newMessage'>
                                 <i class="fas fa-microphone flex-grow-1 text-center"></i>
                             </div>
                         </div>

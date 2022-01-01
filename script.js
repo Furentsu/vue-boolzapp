@@ -3,85 +3,85 @@ const root = new Vue({
     data: {
         contacts: [
             {
-                name: 'Michele',
+                name: 'Michael',
                 avatar: '_1',
                 visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
-                        text: 'Hai portato a spasso il cane?',
+                        text: 'Did you walk the dog?',
                         status: 'sent'
                     },
                     {
                         date: '10/01/2020 15:50:00',
-                        text: 'Ricordati di dargli da mangiare',
+                        text: 'Remember to feed him',
                         status: 'sent'
                     },
                     {
                         date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
+                        text: 'All done!',
                         status: 'received'
                     }
                 ],
             },
             {
-                name: 'Fabio',
+                name: 'Joe',
                 avatar: '_2',
                 visible: true,
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
-                        text: 'Ciao come stai?',
+                        text: 'Hey, what\'s up?',
                         status: 'sent'
                     },
                     {
                         date: '20/03/2020 16:30:55',
-                        text: 'Bene grazie! Stasera ci vediamo?',
+                        text: 'Same as always.. you free tonight?',
                         status: 'received'
                     },
                     {
                         date: '20/03/2020 16:35:00',
-                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        text: 'Nope, I have to go the cinema',
                         status: 'sent'
                     }
                 ],
             },
         
             {
-                name: 'Samuele',
+                name: 'Tim',
                 avatar: '_3',
                 visible: true,
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
-                        text: 'La Marianna va in campagna',
+                        text: 'I hate Jenny...',
                         status: 'received'
                     },
                     {
                         date: '28/03/2020 10:20:10',
-                        text: 'Sicuro di non aver sbagliato chat?',
+                        text: 'Are you sure this is the right chat?',
                         status: 'sent'
                     },
                     {
                         date: '28/03/2020 16:15:22',
-                        text: 'Ah scusa!',
+                        text: 'lol',
                         status: 'received'
                     }
                 ],
             },
             {
-                name: 'Luisa',
+                name: 'George',
                 avatar: '_4',
                 visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
-                        text: 'Lo sai che ha aperto una nuova pizzeria?',
+                        text: 'What about going to the cinema??',
                         status: 'sent'
                     },
                     {
                         date: '10/01/2020 15:50:00',
-                        text: 'Si, ma preferirei andare al cinema',
+                        text: 'No, I\'m lazy.',
                         status: 'received'
                     }
                 ],
